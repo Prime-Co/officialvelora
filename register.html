@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velora - Create Account</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#8B2DFF;
+    --secondary:#B56CFF;
+    --dark:#0A0614;
+    --card:#151122;
+    --text:#ffffff;
+    --muted:#BDB7D4;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(rgba(10,6,20,.75),
+    rgba(10,6,20,.85)),
+    url('images/VelBG.jpg');
+    background-size:cover;
+    background-position:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+    padding:20px;}
+
+.form-card{
+    background:rgba(21,17,34,.95);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(181,108,255,.2);
+    border-radius:30px;
+    padding:40px;
+    box-shadow:
+    0 0 40px rgba(139,45,255,.2),
+    0 20px 50px rgba(0,0,0,.5);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.logo h1{
+    color:rgb(180, 10, 223);
+    font-size:3rem;
+    font-weight:700;
+}
+
+.logo span{
+    color:rgb(180, 10, 223);
+}
+
+.subtitle{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:35px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group input{
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:#1D1830;
+    color:white;
+    font-size:15px;
+    border:1px solid transparent;
+    transition:.3s;
+}
+
+.input-group input:focus{
+    border-color:var(--secondary);
+    box-shadow:0 0 15px rgba(181,108,255,.3);
+}
+
+.input-group input::placeholder{
+    color:#8f88a8;
+}
+
+.register-btn{
+    width:100%;
+    border:none;
+    padding:18px;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:600;
+    margin-top:10px;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+    transition:.3s;
+}
+
+.register-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(139,45,255,.4);
+}
+
+.login{
+    text-align:center;
+    margin-top:25px;
+    color:var(--muted);
+}
+
+.login a{
+    color:var(--secondary);
+    text-decoration:none;
+}
+
+.login a:hover{
+    text-decoration:underline;
+}
+
+.terms{
+    display:flex;
+    gap:10px;
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:20px;
+    align-items:flex-start;
+}
+
+.terms input{
+    margin-top:4px;
+}
+
+@media(max-width:600px){
+
+    .form-card{
+        padding:30px 20px;
+    }
+
+    .logo h1{
+        font-size:2.3rem;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="form-card">
+
+        <div class="logo">
+            <h1><span>V</span>elora</h1>
+        </div>
+
+        <p class="subtitle">
+            Create your account and start your journey
+        </p>
+
+        <form id="registerForm">
+
+            <div class="input-group">
+                <input type="text"
+                placeholder="Full Name"
+                required>
+            </div>
+
+            <div class="input-group">
+                <input type="email"
+                placeholder="Email Address"
+                required>
+            </div>
+
+            <div class="input-group">
+                <input type="text"
+                placeholder="Username"
+                required>
+            </div>
+
+            <div class="input-group">
+                <input type="tel"
+                placeholder="Phone Number"
+                required>
+            </div>
+
+            <div class="input-group">
+                <input type="password"
+                placeholder="Password"
+                required>
+            </div>
+
+            <button class="register-btn" type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+        
+    </div>
+
+</div>
+
+<script>
+    // File Protection: Disable right-click and certain keyboard shortcuts
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey && (e.key === 's' || e.key === 'u' || e.key === 'i')) {
+    e.preventDefault();
+  }
+});
+
+document.getElementById("registerForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    
+    window.location.href = "dashboard.html";
+
+});
+
+</script>
+
+</body>
+</html>
